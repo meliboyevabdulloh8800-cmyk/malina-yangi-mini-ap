@@ -3,10 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';
 import { AuthModule } from './auth/auth.module';
+import { TelegramController } from './telegram.controller';
 
 @Module({
   imports: [AuthModule],
-  controllers: [AppController],
+  controllers: [AppController, TelegramController],
   providers: [AppService, PrismaService],
 })
 export class AppModule {}
