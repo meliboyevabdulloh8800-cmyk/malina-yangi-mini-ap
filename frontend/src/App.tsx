@@ -10,6 +10,7 @@ import {
   Eye
 } from 'lucide-react';
 import { screens } from './screens';
+import { ProfileView, ProfileEdit } from './ProfileScreens';
 
 const icons = [
   Heart, Users, ShieldCheck, Users, Video, SlidersHorizontal, MapPin,
@@ -531,6 +532,8 @@ function Page() {
   const [msg, setMsg] = useState('');
 
   if (!s) return <Home />;
+  if (s.id === 19) return <ProfileView />;
+  if (s.id === 20) return <ProfileEdit />;
   if (s.id === 25) return <VideoStories />;
 
   const I = icons[s.id - 1];

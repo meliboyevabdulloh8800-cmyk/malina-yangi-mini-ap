@@ -1,4 +1,11 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Headers,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
@@ -15,5 +22,25 @@ export class AuthController {
     @Body() body: { phone: string; code: string },
   ) {
     return this.authService.verifyOtp(body.phone, body.code);
+  }
+
+  @Post('telegram')
+  telegramLogin(@Body() body: { initData: string }) {
+    return this.authService.telegramLogin(body.initData);
+  }
+
+  @Get('profile')
+  getProfile(
+    @Headers('x-telegram-init-data') initData: string,
+  ) {
+    return this.authService.getProfile(initData);
+  }
+
+  @Patch('profile')
+  updateProfile(
+    @Headers('x-telegram-init-data') initData: string,
+    @Body() body: any,
+  ) {
+    return this.authService.updateProfile(initData, body);
   }
 }
