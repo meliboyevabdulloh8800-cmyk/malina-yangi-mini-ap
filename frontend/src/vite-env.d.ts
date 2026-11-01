@@ -12,6 +12,7 @@ interface TelegramWebApp {
   ready: () => void;
   expand: () => void;
   initData: string;
+  initDataUnsafe?: { user?: { first_name?: string; last_name?: string } };
 }
 
 interface Window {

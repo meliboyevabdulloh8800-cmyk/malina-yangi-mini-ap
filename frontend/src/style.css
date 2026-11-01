@@ -24,3 +24,2560 @@
 .profile-form small { color: #89968d; font-weight: 400; }
 .profile-form button { justify-self: start; }
 @media(max-width:600px) { .profile-details, .profile-form { grid-template-columns: 1fr; } .profile-form .full-field { grid-column: auto; } }
+
+/* Malina Welcome */
+.welcome-page {
+  min-height: 100vh;
+  padding: 30px clamp(22px, 7vw, 100px);
+  background: radial-gradient(ellipse at 72% 42%, #e7eee5 0%, transparent 38%), #f7f5f0;
+  color: #24352c;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1f6b4f;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.welcome-logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #1f6b4f;
+  color: #ffb7c9;
+}
+.welcome-logo svg { width: 23px; }
+.welcome-content {
+  width: min(1050px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding: 55px 0;
+}
+.welcome-art {
+  min-height: 370px;
+  border-radius: 48% 52% 46% 54%;
+  background: linear-gradient(145deg, #1f6b4f, #43896a);
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 28px 70px #1f6b4f25;
+}
+.welcome-heart {
+  width: 170px;
+  height: 170px;
+  display: grid;
+  place-items: center;
+  color: #ffb7c9;
+  filter: drop-shadow(0 12px 20px #123f2d55);
+}
+.welcome-heart svg { width: 150px; height: 150px; }
+.welcome-spark { position: absolute; color: #f2d5a8; font-size: 38px; }
+.spark-one { top: 16%; right: 19%; }
+.spark-two { bottom: 18%; left: 18%; font-size: 48px; }
+.spark-three { top: 24%; left: 17%; color: #fff0f2; font-size: 35px; }
+.welcome-copy { max-width: 490px; }
+.welcome-kicker { color: #9b7952; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+.welcome-copy h1 {
+  color: #1f513d;
+  font-family: Georgia, serif;
+  font-size: clamp(37px, 5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin: 18px 0;
+}
+.welcome-copy p { color: #748278; font-size: 15px; line-height: 1.8; max-width: 420px; }
+.welcome-cta {
+  margin-top: 23px;
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: #1f6b4f;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 25px #1f6b4f30;
+  transition: transform .2s, background .2s;
+}
+.welcome-cta:hover { transform: translateY(-2px); background: #18583f; }
+.welcome-note { display: block; margin-top: 20px; color: #9ba59d; font-size: 10px; }
+.welcome-bottom { text-align: center; color: #9ba59d; font-size: 9px; letter-spacing: 2px; }
+.welcome-bottom span { color: #d5a66d; padding: 0 8px; }
+@media(max-width:700px) {
+  .welcome-page { padding: 22px; }
+  .welcome-content { grid-template-columns: 1fr; gap: 30px; padding: 35px 0; }
+  .welcome-art { min-height: 230px; max-width: 310px; width: 100%; margin: auto; }
+  .welcome-heart, .welcome-heart svg { width: 110px; height: 110px; }
+  .welcome-copy { text-align: center; margin: auto; }
+  .welcome-copy h1 { font-size: 39px; }
+  .welcome-copy p { margin-left: auto; margin-right: auto; }
+  .welcome-cta { justify-content: center; }
+}
+
+
+/* Malina registration */
+.registration-page {
+  min-height: 100vh; background: #f7f5f0; color: #243b30;
+  padding: 30px 22px 48px; box-sizing: border-box;
+}
+.registration-brand {
+  max-width: 1080px; margin: 0 auto; display: flex; align-items: center;
+  gap: 10px; color: #1f6b4f; font-size: 27px; font-weight: 800; letter-spacing: -1px;
+}
+.registration-logo {
+  width: 39px; height: 39px; border-radius: 14px; background: #1f6b4f;
+  color: white; display: grid; place-items: center;
+}
+.registration-logo svg { width: 22px; }
+.registration-card {
+  width: min(100%, 490px); box-sizing: border-box; margin: 45px auto 0;
+  padding: 38px; background: white; border: 1px solid #eee9df;
+  border-radius: 27px; box-shadow: 0 18px 60px #243b3010;
+}
+.registration-step { color: #b58a5b; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+.registration-symbol {
+  width: 58px; height: 58px; margin: 25px 0 18px; border-radius: 20px;
+  display: grid; place-items: center; background: #fcecf1; color: #d77f9b;
+}
+.registration-symbol svg { width: 28px; height: 28px; }
+.registration-card h1 { font-family: Georgia,serif; font-size: 34px; line-height: 1.15; margin: 0 0 12px; color: #1f4f3b; }
+.registration-intro { color: #778078; font-size: 14px; line-height: 1.7; margin: 0 0 22px; }
+.telegram-status { padding: 13px 15px; background: #f3f7f3; border-radius: 12px; color: #476451; font-size: 12px; display: flex; align-items: center; gap: 9px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #d5a66d; }
+.status-dot.ready { background: #299766; }
+.registration-form { display: grid; gap: 15px; margin-top: 23px; }
+.registration-form label { display: grid; gap: 7px; font-size: 12px; font-weight: 700; color: #405448; }
+.registration-form input, .registration-form select {
+  width: 100%; box-sizing: border-box; border: 1px solid #e5e8e2; border-radius: 11px;
+  padding: 13px 14px; background: #fff; color: #263c30; font: inherit; outline: none;
+}
+.registration-form input:focus, .registration-form select:focus { border-color: #6c9d80; box-shadow: 0 0 0 3px #1f6b4f12; }
+.registration-submit {
+  border: 0; border-radius: 12px; padding: 15px 18px; background: #1f6b4f; color: white;
+  font-weight: 700; font-size: 14px; display: flex; justify-content: center; align-items: center;
+  gap: 10px; cursor: pointer; margin-top: 5px;
+}
+.registration-submit:disabled { opacity: .6; cursor: wait; }
+.registration-error { color: #b43d52; background: #fff1f2; padding: 11px 13px; border-radius: 10px; font-size: 12px; }
+.registration-hint, .registration-foot { display: block; color: #8b948d; font-size: 11px; line-height: 1.6; margin-top: 18px; }
+.registration-foot { text-align: center; margin-top: 25px; }
+@media(max-width: 560px) {
+  .registration-page { padding: 20px 15px 35px; }
+  .registration-card { margin-top: 28px; padding: 26px 21px; border-radius: 22px; }
+  .registration-card h1 { font-size: 29px; }
+}
+
+
+/* MALINA — yangi brend belgisi va animatsiyalar */
+.welcome-logo {
+  border-radius: 15px;
+  background: linear-gradient(145deg, #245f47, #174632);
+  box-shadow: 0 7px 20px #1f6b4f25;
+  color: #fff4df;
+  animation: malinaLogoIn .8s ease both;
+}
+.welcome-logo svg { width: 34px; height: 34px; }
+
+.welcome-art {
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 48%, #5b9a78 0%, transparent 43%),
+    linear-gradient(145deg, #174b36, #2e7957 65%, #194c38);
+  animation: malinaArtIn 1s ease both;
+}
+
+.malina-emblem {
+  width: 210px;
+  height: 210px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #f5dfbd65;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff16, #ffffff03 68%);
+  box-shadow: 0 0 65px #f3d6a51c, inset 0 0 35px #ffffff12;
+  animation: malinaFloat 4s ease-in-out infinite;
+  z-index: 2;
+}
+.malina-emblem svg {
+  width: 175px;
+  height: 175px;
+  filter: drop-shadow(0 8px 18px #102f2360);
+}
+
+.malina-orbit {
+  position: absolute;
+  width: 275px;
+  height: 275px;
+  border: 1px solid #f5dfbd38;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orbit-one { animation: malinaRotate 24s linear infinite; }
+.orbit-two {
+  width: 330px;
+  height: 330px;
+  border-style: dashed;
+  border-color: #ffffff22;
+  animation: malinaRotate 36s linear infinite reverse;
+}
+.welcome-spark { animation: malinaSpark 3s ease-in-out infinite; }
+.spark-two { animation-delay: .8s; }
+.spark-three { animation-delay: 1.5s; }
+
+.welcome-brand > span:last-child {
+  letter-spacing: -1.4px;
+}
+.welcome-copy {
+  animation: malinaCopyIn .9s .15s ease both;
+}
+.welcome-cta {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.welcome-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px #1f6b4f40;
+}
+
+@keyframes malinaLogoIn {
+  from { opacity: 0; transform: scale(.75) rotate(-12deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes malinaArtIn {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes malinaCopyIn {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes malinaFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-11px) rotate(2deg); }
+}
+@keyframes malinaRotate { to { transform: rotate(360deg); } }
+@keyframes malinaSpark {
+  0%, 100% { opacity: .55; transform: scale(.85); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@media (max-width: 700px) {
+  .malina-emblem { width: 155px; height: 155px; }
+  .malina-emblem svg { width: 135px; height: 135px; }
+  .orbit-one { width: 205px; height: 205px; }
+  .orbit-two { width: 245px; height: 245px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-page *, .welcome-page *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* MALINA — profil yaratish, yangi dizayn */
+.registration-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 30px 20px 50px;
+  box-sizing: border-box;
+  background: #f7f5f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-brand {
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -.8px;
+  margin: 12px auto 25px;
+}
+
+.registration-logo {
+  display: none;
+}
+
+.registration-card {
+  width: min(100%, 470px);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 34px 30px;
+  border: 1px solid #eee9df;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 16px 45px rgba(39, 63, 49, .07);
+}
+
+.registration-step {
+  color: #b18b60;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.registration-symbol {
+  display: none;
+}
+
+.registration-card h1 {
+  color: #244b39;
+  font-family: Georgia, serif;
+  font-size: 33px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.registration-intro {
+  color: #7b847d;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 22px;
+}
+
+.telegram-status {
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: #f2f6f1;
+  color: #426b54;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.registration-form {
+  display: grid;
+  gap: 17px;
+  margin-top: 25px;
+}
+
+.registration-form label {
+  color: #435449;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  min-height: 49px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid #e8e9e2;
+  border-radius: 12px;
+  outline: none;
+  background: #fbfbf8;
+  color: #283d32;
+  font: 14px Arial, sans-serif;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+  border-color: #6c9d80;
+  box-shadow: 0 0 0 3px #1f6b4f12;
+}
+
+.registration-submit {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 7px;
+  border: 0;
+  border-radius: 14px;
+  background: #1f6b4f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.registration-error {
+  color: #b54b58;
+  font-size: 13px;
+}
+
+.registration-hint,
+.registration-foot {
+  color: #929a93;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.registration-foot {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .registration-page { padding: 20px 15px 35px; }
+  .registration-brand { margin: 10px auto 22px; }
+  .registration-card { padding: 28px 21px; border-radius: 22px; }
+  .registration-card h1 { font-size: 29px; }
+}
+
+
+/* MALINA — 08 Qiziqishlar */
+.interests-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #f7f5f0;
+  color: #244b39;
+  padding: 22px 20px 45px;
+  box-sizing: border-box;
+}
+.interests-header {
+  max-width: 520px;
+  margin: 0 auto 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1f6b4f;
+  font-weight: 700;
+}
+.interests-header button {
+  border: 0;
+  background: transparent;
+  color: #1f6b4f;
+  font-size: 27px;
+  cursor: pointer;
+}
+.interests-header span { font: 700 23px Georgia,serif; letter-spacing: 2px; }
+.interests-header small { color: #9a9c91; font-size: 12px; }
+.interests-content { width: min(100%, 520px); margin: auto; }
+.interests-progress {
+  height: 4px;
+  background: #e7e6dd;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  overflow: hidden;
+}
+.interests-progress i { display: block; width: 32%; height: 100%; background: #1f6b4f; border-radius: 5px; }
+.interests-kicker {
+  color: #b18b60;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+.interests-content h1 {
+  font: 500 clamp(37px, 8vw, 48px)/1.12 Georgia,serif;
+  margin: 13px 0;
+  color: #244b39;
+}
+.interests-description {
+  color: #78847b;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 440px;
+}
+.interests-count { margin: 25px 0 14px; color: #53685a; font-size: 13px; }
+.interests-count b { color: #1f6b4f; }
+.interests-count span { color: #92988f; }
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+.interest-chip {
+  position: relative;
+  min-height: 58px;
+  border: 1px solid #e8e7df;
+  border-radius: 14px;
+  background: #fff;
+  color: #42564a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.interest-chip > span { font-size: 21px; }
+.interest-chip.active {
+  border: 1.5px solid #1f6b4f;
+  background: #edf4ee;
+  color: #1f6b4f;
+}
+.interest-chip i {
+  margin-left: auto;
+  font-style: normal;
+  font-weight: 800;
+}
+.interests-continue {
+  width: 100%;
+  min-height: 57px;
+  margin-top: 25px;
+  border: 0;
+  border-radius: 15px;
+  background: #1f6b4f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.interests-continue:disabled { opacity: .4; cursor: not-allowed; }
+.interests-foot { text-align: center; color: #9a9e95; font-size: 11px; margin-top: 16px; }
+@media (max-width: 380px) {
+  .interests-page { padding-left: 14px; padding-right: 14px; }
+  .interest-chip { padding: 9px; font-size: 12px; }
+}
+
+
+
+/* MALINA — 09 Qadriyatlar */
+.values-progress i { width: 34.6%; }
+
+.values-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.value-card {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 14px;
+  border: 1px solid #e9e7df;
+  border-radius: 15px;
+  background: #fff;
+  color: #303b32;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease;
+}
+
+.value-card.active {
+  border: 1.5px solid #1f6b4f;
+  background: #edf4ee;
+}
+
+.value-emoji {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f7f5f0;
+  font-size: 21px;
+}
+
+.value-copy {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.value-copy b {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.value-copy small {
+  color: #92978e;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.value-check {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dedfd8;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.value-card.active .value-check {
+  border-color: #1f6b4f;
+  background: #1f6b4f;
+}
+
+.values-page .interests-continue { margin-top: 22px; }
+
+
+/* MALINA — 11 Profil tafsilotlari */
+.profile-details-page {
+  min-height: 100vh;
+  padding: 0 18px 34px;
+  background: #f7f5f0;
+  color: #26372d;
+}
+.profile-details-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-details-header span {
+  color: #1f6b4f;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.profile-details-header button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 24px;
+  cursor: pointer;
+}
+.profile-details-content { max-width: 520px; margin: auto; }
+.profile-details-photo {
+  height: min(62vh, 470px);
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 23px;
+  background: #e9e5dc;
+}
+.profile-details-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.profile-photo-count {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #ffffffd9;
+  color: #33483b;
+  font-size: 11px;
+}
+.profile-details-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px 0 14px;
+}
+.profile-details-heading h1 { margin: 0; font-size: 27px; letter-spacing: -.8px; }
+.profile-details-heading p { margin: 7px 0 0; color: #8b9289; font-size: 12px; }
+.profile-details-heading p span { color: #48a878; }
+.profile-verified {
+  padding: 7px 9px;
+  border-radius: 20px;
+  background: #e8f1e9;
+  color: #1f6b4f;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.profile-match {
+  padding: 15px 17px;
+  border-radius: 16px;
+  background: #eaf2eb;
+}
+.profile-match b { color: #1f6b4f; font-size: 23px; }
+.profile-match span { color: #1f6b4f; font-size: 12px; font-weight: 700; }
+.profile-match p { margin: 5px 0 0; color: #778579; font-size: 11px; }
+.profile-info-block { margin-top: 23px; }
+.profile-info-block h2 { margin: 0 0 10px; font-size: 15px; }
+.profile-info-block p { color: #777f76; font-size: 13px; line-height: 1.65; }
+.profile-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.profile-tags span {
+  padding: 9px 12px;
+  border: 1px solid #e8e5dc;
+  border-radius: 22px;
+  background: #fff;
+  color: #566358;
+  font-size: 11px;
+}
+.profile-details-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  margin: 27px 0 18px;
+}
+.profile-details-actions button {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #1f6b4f;
+  font-size: 27px;
+  box-shadow: 0 5px 18px #26372d12;
+  cursor: pointer;
+}
+.profile-details-actions .profile-like { width: 64px; height: 64px; color: #e77e91; font-size: 34px; }
+.profile-details-actions .profile-like.liked { background: #fff0f2; }
+.profile-details-actions .profile-super { color: #c08a45; }
+.profile-details-continue {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 15px;
+  background: #1f6b4f;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* MALINA — 12 Yoqtirish */
+.like-page {
+  min-height: 100vh;
+  padding: 0 18px 95px;
+  background: #f7f5f0;
+  color: #26372d;
+}
+.like-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.like-header span {
+  color: #1f6b4f;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.like-header button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #1f6b4f;
+  font-size: 23px;
+  cursor: pointer;
+}
+.like-intro { max-width: 520px; margin: 14px auto 18px; }
+.like-intro p {
+  color: #b18a5a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.like-intro h1 { margin: 7px 0; font-size: 26px; letter-spacing: -.8px; }
+.like-intro span { color: #92978e; font-size: 12px; }
+.like-card {
+  max-width: 520px;
+  height: min(57vh, 490px);
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 23px;
+  background: #e8e3d9;
+}
+.like-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.like-card-shade {
+  position: absolute;
+  inset: 30% 0 0;
+  background: linear-gradient(transparent, #101a16d9);
+}
+.like-card-info {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 23px;
+  color: white;
+}
+.like-distance { font-size: 11px; }
+.like-card-info h2 { margin: 8px 0; font-size: 28px; }
+.like-card-info p { max-width: 340px; margin: 0; font-size: 12px; line-height: 1.5; }
+.like-card-number {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #ffffffd9;
+  color: #35483b;
+  font-size: 10px;
+}
+.like-actions {
+  max-width: 420px;
+  margin: 22px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.like-action {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.like-action span {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 5px 18px #26372d12;
+  font-size: 27px;
+}
+.like-action small { color: #8b9289; font-size: 10px; }
+.like-action.pass span { color: #8b9289; }
+.like-action.super span { color: #c08a45; }
+.like-action.heart span {
+  width: 66px;
+  height: 66px;
+  background: #1f6b4f;
+  color: white;
+  font-size: 31px;
+}
+.like-notice {
+  min-height: 18px;
+  margin: 13px 0;
+  text-align: center;
+  color: #1f6b4f;
+  font-size: 12px;
+}
+.like-bottom-nav {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 11px 8px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid #eae7df;
+  background: #fff;
+}
+.like-bottom-nav button {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  color: #92978e;
+  font-size: 21px;
+}
+.like-bottom-nav button.active { color: #1f6b4f; }
+.like-bottom-nav small { font-size: 9px; }
+
+
+/* MALINA — 13 O‘zaro moslik */
+.match-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 35px;
+  background: #f7f5f0;
+  color: #26372d;
+}
+.match-glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #f5dfe1;
+  filter: blur(65px);
+  opacity: .65;
+}
+.match-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.match-header span {
+  color: #1f6b4f;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.match-header button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #667368;
+  font-size: 22px;
+}
+.match-content {
+  max-width: 480px;
+  margin: 35px auto 0;
+  position: relative;
+  text-align: center;
+}
+.match-kicker {
+  color: #bd9467;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.match-content h1 {
+  margin: 9px 0;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 11vw, 58px);
+  font-weight: 500;
+}
+.match-subtitle { color: #858d83; font-size: 13px; }
+.match-photos {
+  height: 205px;
+  margin: 40px auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.match-photo {
+  width: 148px;
+  height: 175px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  border-radius: 75px;
+  box-shadow: 0 12px 30px #35483b20;
+}
+.match-photo.first { transform: rotate(-8deg); }
+.match-photo.second { transform: rotate(8deg); }
+.match-photo img { width: 100%; height: 100%; object-fit: cover; }
+.match-heart {
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  margin: 0 -12px;
+  border: 4px solid #f7f5f0;
+  border-radius: 50%;
+  background: #e98da0;
+  color: white;
+  font-size: 23px;
+}
+.match-percent {
+  display: inline-block;
+  padding: 9px 17px;
+  border-radius: 25px;
+  background: #e8f1e9;
+  color: #1f6b4f;
+  font-size: 12px;
+  font-weight: 800;
+}
+.match-content h2 { margin: 20px 0 8px; font-size: 21px; }
+.match-description {
+  max-width: 330px;
+  margin: 0 auto 24px;
+  color: #899087;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.match-message {
+  width: 100%;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 15px;
+  background: #1f6b4f;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.match-continue {
+  margin-top: 13px;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: #788379;
+  font-size: 12px;
+  cursor: pointer;
+}
+@media (max-width: 380px) {
+  .match-photo { width: 128px; height: 158px; }
+  .match-photos { height: 185px; }
+}
+
+
+/* MALINA — 14 Suhbatlar */
+.chats-page {
+  min-height: 100vh;
+  padding: 0 18px 90px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.chats-header {
+  max-width: 520px;
+  margin: auto;
+  min-height: 86px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chats-header span {
+  color: #1f6b4f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.chats-header h1 { margin: 5px 0 0; font-size: 27px; }
+.chats-header button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #1f6b4f;
+  font-size: 23px;
+}
+.chats-search {
+  max-width: 520px;
+  height: 46px;
+  margin: 8px auto 25px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ece9e1;
+  border-radius: 13px;
+  background: #fff;
+  color: #8e968c;
+}
+.chats-search span { font-size: 22px; }
+.chats-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #34483a;
+  font-size: 12px;
+}
+.chats-matches, .chats-list { max-width: 520px; margin: auto; }
+.chats-matches h2, .chats-list-heading h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.chats-avatar-row {
+  display: flex;
+  gap: 21px;
+  margin: 17px 0 28px;
+}
+.chats-avatar-row button {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  border: 0;
+  background: transparent;
+  color: #566358;
+}
+.chats-avatar-wrap, .chat-row-photo {
+  width: 57px;
+  height: 57px;
+  position: relative;
+  display: block;
+}
+.chats-avatar-wrap img, .chat-row-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chats-avatar-wrap i, .chat-row-photo i {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #f7f5f0;
+  border-radius: 50%;
+  background: #52ad78;
+}
+.chats-avatar-row small { font-size: 10px; }
+.chats-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.chats-list-heading span { color: #969c93; font-size: 10px; }
+.chat-row {
+  width: 100%;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid #ebe8e0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.chat-row-photo { width: 53px; height: 53px; flex: 0 0 53px; }
+.chat-row-copy {
+  min-width: 0;
+  flex: 1;
+  display: grid;
+  gap: 6px;
+}
+.chat-row-copy b { color: #34483a; font-size: 13px; }
+.chat-row-copy small {
+  overflow: hidden;
+  color: #92988f;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chat-row-meta {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+.chat-row-meta small { color: #a0a59c; font-size: 9px; }
+.chat-row-meta i {
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #1f6b4f;
+  color: white;
+  font-size: 10px;
+  font-style: normal;
+}
+.chats-bottom-nav {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 11px 8px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid #eae7df;
+  background: #fff;
+}
+.chats-bottom-nav button {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  color: #92978e;
+  font-size: 21px;
+}
+.chats-bottom-nav button.active { color: #1f6b4f; }
+.chats-bottom-nav small { font-size: 9px; }
+
+
+/* MALINA — 15 Jonli chat */
+.live-chat-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f5f0;
+  color: #293b30;
+  padding-bottom: 12px;
+}
+.live-chat-header {
+  min-height: 75px;
+  padding: 10px 17px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #eae7df;
+  background: #fff;
+}
+.live-chat-header > button {
+  border: 0;
+  background: transparent;
+  color: #315441;
+  font-size: 25px;
+  cursor: pointer;
+}
+.live-chat-header img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.live-chat-header > div {
+  flex: 1;
+  display: grid;
+  gap: 5px;
+}
+.live-chat-header b { font-size: 13px; }
+.live-chat-header small {
+  color: #58a477;
+  font-size: 10px;
+}
+.live-chat-header small i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: #58a477;
+}
+.live-chat-header .chat-more { font-size: 22px; }
+.live-chat-date {
+  align-self: center;
+  margin: 20px 0;
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: #eceae2;
+  color: #92978e;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.live-chat-messages {
+  width: 100%;
+  max-width: 650px;
+  flex: 1;
+  margin: 0 auto;
+  padding: 0 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.chat-bubble-row { display: flex; justify-content: flex-start; }
+.chat-bubble-row.mine { justify-content: flex-end; }
+.chat-bubble {
+  max-width: min(80%, 390px);
+  padding: 12px 14px 8px;
+  border-radius: 16px 16px 16px 4px;
+  background: #fff;
+  box-shadow: 0 3px 12px #26372d08;
+}
+.chat-bubble-row.mine .chat-bubble {
+  border-radius: 16px 16px 4px 16px;
+  background: #e8f1e9;
+}
+.chat-bubble p {
+  margin: 0;
+  color: #46564a;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.chat-bubble small {
+  display: block;
+  margin-top: 5px;
+  color: #9ba197;
+  text-align: right;
+  font-size: 9px;
+}
+.live-chat-suggestions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 15px;
+  overflow-x: auto;
+}
+.live-chat-suggestions button {
+  padding: 8px 13px;
+  border: 1px solid #e7e5dd;
+  border-radius: 20px;
+  background: #fff;
+  color: #69756b;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.live-chat-input {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 14px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid #eae7df;
+  background: #fff;
+}
+.live-chat-input > button {
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  border: 0;
+  border-radius: 50%;
+  background: #f3f2ec;
+  color: #557060;
+  font-size: 20px;
+}
+.live-chat-input input {
+  min-width: 0;
+  flex: 1;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #ebe8e0;
+  border-radius: 22px;
+  outline: none;
+  background: #faf9f6;
+  font-size: 13px;
+}
+.live-chat-input .chat-send {
+  background: #1f6b4f;
+  color: #fff;
+  font-weight: 800;
+}
+.live-chat-input .chat-send:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+
+/* MALINA — 16 AI Match */
+.ai-match-page {
+  min-height: 100vh;
+  padding: 0 19px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.ai-match-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ai-match-header button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 21px;
+}
+.ai-match-header span {
+  color: #1f6b4f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.ai-match-intro {
+  max-width: 520px;
+  margin: 24px auto 22px;
+  text-align: center;
+}
+.ai-match-symbol {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: #e8f1e9;
+  color: #1f6b4f;
+  font-size: 27px;
+}
+.ai-match-intro > p {
+  color: #bd9467;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.ai-match-intro h1 {
+  margin: 10px 0;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+.ai-match-intro > span {
+  color: #8d958b;
+  font-size: 11px;
+}
+.ai-match-result {
+  max-width: 520px;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #ece8df;
+  border-radius: 21px;
+  background: #fff;
+  box-shadow: 0 8px 28px #26372d08;
+}
+.ai-result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #a28a6b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.ai-result-status {
+  padding: 7px 10px;
+  border-radius: 18px;
+  background: #edf4ee;
+  color: #1f6b4f;
+  letter-spacing: 0;
+}
+.ai-person {
+  height: 205px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 13px;
+  border-radius: 15px;
+  background: #eee9df;
+}
+.ai-person img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ai-person-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 28px 15px 13px;
+  background: linear-gradient(transparent, #17251edb);
+  color: #fff;
+}
+.ai-person-info h2 { margin: 0 0 5px; font-size: 21px; }
+.ai-person-info p { margin: 0; font-size: 10px; }
+.ai-score {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 19px 4px 14px;
+}
+.ai-score-circle {
+  width: 67px;
+  height: 67px;
+  flex: 0 0 67px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  border: 4px solid #dcebdd;
+  border-radius: 50%;
+  color: #1f6b4f;
+}
+.ai-score-circle b { font-size: 17px; }
+.ai-score-circle small { font-size: 7px; letter-spacing: 1px; }
+.ai-score-copy { display: grid; gap: 6px; }
+.ai-score-copy b { font-size: 12px; }
+.ai-score-copy span { color: #92988f; font-size: 10px; line-height: 1.4; }
+.ai-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 13px;
+  border-top: 1px solid #f0eee8;
+}
+.ai-reasons span {
+  padding: 7px 9px;
+  border-radius: 16px;
+  background: #f3f5ef;
+  color: #647467;
+  font-size: 9px;
+}
+.ai-match-primary {
+  width: 100%;
+  max-width: 520px;
+  min-height: 54px;
+  margin: 19px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 15px;
+  background: #1f6b4f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.ai-match-secondary {
+  width: 100%;
+  max-width: 520px;
+  display: block;
+  margin: 9px auto 0;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: #788579;
+  font-size: 12px;
+}
+.ai-match-note {
+  max-width: 420px;
+  margin: 12px auto;
+  color: #a0a49b;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* MALINA — 17 Uchrashuv rejalashtirish */
+.date-plan-page {
+  min-height: 100vh;
+  padding: 0 19px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.date-plan-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.date-plan-header button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 21px;
+}
+.date-plan-header > span:nth-child(2) {
+  color: #1f6b4f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.date-plan-step { color: #a5a69d; font-size: 10px; }
+.date-plan-heading {
+  max-width: 520px;
+  margin: 20px auto 22px;
+  text-align: center;
+}
+.date-plan-icon {
+  width: 52px;
+  height: 52px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #f8e8e9;
+  color: #d58d9b;
+  font-size: 29px;
+}
+.date-plan-heading > p {
+  margin: 15px 0 8px;
+  color: #bd9467;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.date-plan-heading h1 {
+  margin: 0 0 9px;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 1.16;
+}
+.date-plan-heading > span { color: #92988f; font-size: 11px; }
+.date-plan-card {
+  max-width: 520px;
+  margin: auto;
+  padding: 19px 16px;
+  border: 1px solid #ece8df;
+  border-radius: 20px;
+  background: #fff;
+}
+.date-plan-card h3 {
+  margin: 17px 0 11px;
+  color: #34483b;
+  font-size: 12px;
+}
+.date-plan-card h3:first-child { margin-top: 0; }
+.date-plan-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.date-plan-types button {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid #ecebe4;
+  border-radius: 12px;
+  background: #fff;
+  color: #687469;
+  font-size: 11px;
+}
+.date-plan-types button.selected {
+  border-color: #1f6b4f;
+  background: #edf4ee;
+  color: #1f6b4f;
+  font-weight: 700;
+}
+.date-plan-types button span { font-size: 18px; }
+.date-plan-field {
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid #e9e8e0;
+  border-radius: 11px;
+  outline: none;
+  background: #faf9f6;
+  color: #435448;
+  font: inherit;
+  font-size: 12px;
+}
+.date-plan-field:focus { border-color: #8aaa94; }
+.date-plan-submit {
+  width: 100%;
+  max-width: 520px;
+  min-height: 53px;
+  margin: 16px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 14px;
+  background: #1f6b4f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.date-plan-submit:disabled { opacity: .45; }
+.date-plan-success {
+  max-width: 488px;
+  margin: 12px auto;
+  padding: 15px;
+  display: grid;
+  gap: 7px;
+  border: 1px solid #dcebdd;
+  border-radius: 13px;
+  background: #edf4ee;
+  color: #315441;
+  font-size: 12px;
+}
+.date-plan-success small { color: #829084; font-size: 10px; }
+
+
+/* MALINA — 18 Bildirishnomalar */
+.notifications-page {
+  min-height: 100vh;
+  padding: 0 18px 85px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.notifications-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notifications-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 19px;
+}
+.notifications-header h2 { font-size: 15px; }
+.notifications-welcome {
+  max-width: 520px;
+  margin: 25px auto 22px;
+}
+.notifications-welcome > span {
+  color: #bd9467;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.notifications-welcome h1 {
+  margin: 9px 0;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.17;
+}
+.notifications-welcome p { color: #92988f; font-size: 11px; }
+.notifications-filters {
+  max-width: 520px;
+  margin: 0 auto 17px;
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.notifications-filters button {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid #eae8df;
+  border-radius: 20px;
+  background: #fff;
+  color: #778176;
+  font-size: 10px;
+}
+.notifications-filters button.active {
+  border-color: #1f6b4f;
+  background: #1f6b4f;
+  color: #fff;
+}
+.notifications-list {
+  max-width: 520px;
+  margin: auto;
+  display: grid;
+  gap: 9px;
+}
+.notification-item {
+  width: 100%;
+  min-height: 83px;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #eeece5;
+  border-radius: 15px;
+  background: #fff;
+  color: #34483b;
+  text-align: left;
+}
+.notification-item.is-read { background: #fbfaf7; opacity: .72; }
+.notification-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 21px;
+}
+.notification-icon.pink { background: #fae9ed; color: #d58b9c; }
+.notification-icon.green { background: #eaf2e9; color: #397456; }
+.notification-icon.gold { background: #f7f0e4; color: #b28c59; }
+.notification-copy { flex: 1; min-width: 0; display: grid; gap: 5px; }
+.notification-copy b { font-size: 11px; }
+.notification-copy > span { color: #81897f; font-size: 10px; line-height: 1.4; }
+.notification-copy small { color: #a6a69d; font-size: 9px; }
+.notification-item > i {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #d58b9c;
+}
+.notifications-empty {
+  padding: 30px;
+  color: #92988f;
+  text-align: center;
+  font-size: 12px;
+}
+.notifications-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 65px;
+  padding: 8px 12px max(8px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ebe8e0;
+  background: #fff;
+}
+.notifications-bottom button {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  color: #92998f;
+  font-size: 19px;
+}
+.notifications-bottom button.current { color: #1f6b4f; }
+.notifications-bottom small { font-size: 9px; }
+
+
+/* MALINA — 21 Maxfiylik */
+.privacy-page {
+  min-height: 100vh;
+  padding: 0 18px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.privacy-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.privacy-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 20px;
+}
+.privacy-header h2 { font-size: 15px; }
+.privacy-header > span { color: #d58b9c; font-size: 22px; }
+.privacy-intro {
+  max-width: 520px;
+  margin: 23px auto 22px;
+  text-align: center;
+}
+.privacy-intro > div {
+  width: 52px;
+  height: 52px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #eaf2e9;
+  color: #1f6b4f;
+  font-size: 25px;
+}
+.privacy-intro > p {
+  margin: 14px 0 7px;
+  color: #bd9467;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.privacy-intro h1 {
+  margin: 0 0 8px;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+.privacy-intro > span {
+  color: #92988f;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.privacy-card {
+  max-width: 488px;
+  margin: auto;
+  padding: 17px 15px;
+  border: 1px solid #ece8df;
+  border-radius: 19px;
+  background: #fff;
+}
+.privacy-card h3 {
+  margin: 0 0 8px;
+  color: #34483b;
+  font-size: 12px;
+}
+.privacy-option {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #f0eee8;
+}
+.privacy-option:last-child { border-bottom: 0; }
+.privacy-option > div { display: grid; gap: 5px; }
+.privacy-option b { color: #394b3e; font-size: 11px; }
+.privacy-option span { max-width: 290px; color: #92988f; font-size: 9px; line-height: 1.4; }
+.privacy-toggle {
+  width: 43px;
+  height: 25px;
+  flex: 0 0 43px;
+  padding: 3px;
+  border: 0;
+  border-radius: 20px;
+  background: #deded7;
+  transition: background .2s;
+}
+.privacy-toggle i {
+  width: 19px;
+  height: 19px;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform .2s;
+}
+.privacy-toggle.on { background: #1f6b4f; }
+.privacy-toggle.on i { transform: translateX(18px); }
+.privacy-security {
+  max-width: 488px;
+  margin: 13px auto;
+  padding: 15px;
+  display: flex;
+  gap: 12px;
+  border: 1px solid #e8e9df;
+  border-radius: 15px;
+  background: #f0f3eb;
+}
+.privacy-security > span { color: #1f6b4f; font-size: 23px; }
+.privacy-security b { color: #315441; font-size: 11px; }
+.privacy-security p { color: #7e8b7f; font-size: 10px; line-height: 1.5; }
+.privacy-security button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1f6b4f;
+  font-size: 10px;
+  font-weight: 700;
+}
+.privacy-back {
+  width: 100%;
+  max-width: 520px;
+  min-height: 48px;
+  margin: 8px auto;
+  display: block;
+  border: 1px solid #dfe6dc;
+  border-radius: 13px;
+  background: #fff;
+  color: #1f6b4f;
+  font-size: 12px;
+  font-weight: 700;
+}
+.privacy-note {
+  color: #a0a49b;
+  text-align: center;
+  font-size: 9px;
+}
+
+
+/* MALINA — 22 Premium */
+.premium-page {
+  min-height: 100vh;
+  padding: 0 18px 30px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.premium-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.premium-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 20px;
+}
+.premium-header > span:nth-child(2) {
+  color: #1f6b4f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.premium-crown { color: #c29a60; font-size: 24px; }
+.premium-hero {
+  max-width: 520px;
+  margin: 23px auto 20px;
+  padding: 23px 12px;
+  border-radius: 21px;
+  background: #1f4939;
+  color: #fff;
+  text-align: center;
+}
+.premium-emblem {
+  width: 58px;
+  height: 58px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c9a875;
+  border-radius: 50%;
+  color: #e3c28e;
+  font-size: 29px;
+}
+.premium-hero > p {
+  margin: 17px 0 8px;
+  color: #d7b77f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.premium-hero h1 {
+  margin: 0 0 9px;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+.premium-hero h1 i { color: #e6c58f; }
+.premium-hero > span { color: #d5dfd5; font-size: 10px; }
+.premium-benefits {
+  max-width: 488px;
+  margin: auto;
+  padding: 5px 15px;
+  border: 1px solid #ece8df;
+  border-radius: 17px;
+  background: #fff;
+}
+.premium-feature {
+  min-height: 63px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f0eee8;
+}
+.premium-feature:last-child { border-bottom: 0; }
+.premium-feature > span {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f5efe4;
+  color: #b38b55;
+  font-size: 19px;
+}
+.premium-feature > div { flex: 1; display: grid; gap: 4px; }
+.premium-feature b { color: #394b3e; font-size: 11px; }
+.premium-feature small { color: #92988f; font-size: 9px; }
+.premium-feature > i { color: #4d8966; font-size: 14px; }
+.premium-plans {
+  max-width: 520px;
+  margin: 20px auto 0;
+}
+.premium-plans h3 {
+  margin: 0 0 11px;
+  color: #34483b;
+  font-size: 12px;
+}
+.premium-plan {
+  position: relative;
+  width: 100%;
+  min-height: 65px;
+  margin-bottom: 8px;
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid #e9e6dc;
+  border-radius: 13px;
+  background: #fff;
+  color: #34483b;
+  text-align: left;
+}
+.premium-plan.chosen {
+  border: 1.5px solid #1f6b4f;
+  background: #f1f6ef;
+}
+.premium-radio { color: #1f6b4f; font-size: 17px; }
+.premium-plan-name { flex: 1; display: grid; gap: 4px; }
+.premium-plan-name b { font-size: 12px; }
+.premium-plan-name small { color: #92988f; font-size: 9px; }
+.premium-plan strong { font-size: 12px; }
+.premium-plan strong small { font-size: 9px; font-weight: 400; }
+.premium-plan em {
+  position: absolute;
+  top: -7px;
+  right: 12px;
+  padding: 4px 7px;
+  border-radius: 9px;
+  background: #d5a66d;
+  color: #fff;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 800;
+}
+.premium-continue {
+  width: 100%;
+  max-width: 520px;
+  min-height: 52px;
+  margin: 12px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 14px;
+  background: #1f6b4f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.premium-legal {
+  color: #a0a49b;
+  text-align: center;
+  font-size: 9px;
+}
+
+
+/* MALINA — 23 Hamyon */
+.wallet-page {
+  min-height: 100vh;
+  padding: 0 18px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.wallet-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wallet-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 20px;
+}
+.wallet-header h2 { font-size: 15px; }
+.wallet-header > span { color: #bd9467; font-size: 23px; }
+.wallet-balance {
+  max-width: 480px;
+  min-height: 180px;
+  margin: 20px auto;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 21px;
+  background: linear-gradient(135deg, #1f4939, #28684d);
+  color: #fff;
+  box-shadow: 0 12px 28px #1f493925;
+}
+.wallet-balance > span {
+  color: #d8bd91;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.wallet-balance h1 {
+  margin: 17px 0 5px;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 500;
+}
+.wallet-balance h1 small { font-family: Arial, sans-serif; font-size: 13px; }
+.wallet-balance p { margin: 0; color: #d2ded3; font-size: 10px; }
+.wallet-card-footer {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  color: #d7c49f;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.wallet-actions {
+  max-width: 520px;
+  margin: 0 auto 23px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.wallet-actions button {
+  min-height: 90px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 7px;
+  border: 1px solid #eae7de;
+  border-radius: 15px;
+  background: #fff;
+  color: #315441;
+}
+.wallet-actions button > span { font-size: 23px; color: #bd9467; }
+.wallet-actions button b { font-size: 10px; }
+.wallet-history {
+  max-width: 488px;
+  margin: auto;
+  padding: 16px;
+  border: 1px solid #ece8df;
+  border-radius: 17px;
+  background: #fff;
+}
+.wallet-history-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wallet-history-heading h3 { font-size: 12px; }
+.wallet-history-heading button {
+  border: 0;
+  background: transparent;
+  color: #1f6b4f;
+  font-size: 10px;
+}
+.wallet-transaction {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #f0eee8;
+}
+.wallet-transaction-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f5efe4;
+  color: #b38b55;
+  font-size: 18px;
+}
+.wallet-transaction > div { flex: 1; display: grid; gap: 5px; }
+.wallet-transaction b { font-size: 10px; }
+.wallet-transaction small { color: #92988f; font-size: 9px; }
+.wallet-transaction strong { font-size: 10px; color: #a66d70; }
+.wallet-transaction strong.income { color: #39815b; }
+.wallet-notice {
+  max-width: 488px;
+  margin: 13px auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #92988f;
+}
+.wallet-notice > span { color: #bd9467; }
+.wallet-notice p { margin: 0; font-size: 9px; line-height: 1.5; }
+
+
+/* MALINA — 24 Sovg‘alar */
+.gifts-page {
+  min-height: 100vh;
+  padding: 0 18px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.gifts-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gifts-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 19px;
+}
+.gifts-header h2 { font-size: 15px; }
+.gifts-hero {
+  max-width: 520px;
+  margin: 18px auto 20px;
+  padding: 22px 12px;
+  border-radius: 20px;
+  background: #f4e9e6;
+  text-align: center;
+}
+.gifts-hero > div { font-size: 42px; }
+.gifts-hero > p {
+  margin: 10px 0 7px;
+  color: #bd9467;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.gifts-hero h1 {
+  margin: 0 0 8px;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+.gifts-hero > span { color: #8e9188; font-size: 10px; }
+.gifts-recipient {
+  max-width: 488px;
+  margin: 0 auto 15px;
+  display: grid;
+  gap: 7px;
+}
+.gifts-recipient label { color: #526456; font-size: 11px; font-weight: 700; }
+.gifts-recipient select {
+  width: 100%;
+  height: 43px;
+  padding: 0 12px;
+  border: 1px solid #e9e6dc;
+  border-radius: 11px;
+  background: #fff;
+  color: #34483b;
+  font-size: 12px;
+}
+.gifts-grid {
+  max-width: 520px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.gift-card {
+  position: relative;
+  min-height: 143px;
+  padding: 13px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #ece8df;
+  border-radius: 15px;
+  background: #fff;
+  color: #34483b;
+}
+.gift-card.selected {
+  border: 1.5px solid #1f6b4f;
+  background: #f0f5ee;
+}
+.gift-emoji { font-size: 31px; }
+.gift-card > b { font-size: 11px; }
+.gift-card > small { color: #92988f; font-size: 9px; }
+.gift-card > strong { color: #1f6b4f; font-size: 11px; }
+.gift-card > strong i { font-size: 8px; font-style: normal; font-weight: 400; }
+.gift-check {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  color: #1f6b4f;
+  font-size: 12px;
+}
+.gift-summary {
+  max-width: 488px;
+  margin: 15px auto 0;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #ece8df;
+  border-radius: 13px;
+  background: #fff;
+}
+.gift-summary > span { color: #92988f; font-size: 9px; }
+.gift-summary > b { font-size: 10px; }
+.gift-summary > strong { color: #1f6b4f; font-size: 10px; }
+.gift-send {
+  width: 100%;
+  max-width: 520px;
+  min-height: 51px;
+  margin: 12px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 14px;
+  background: #1f6b4f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.gift-demo-notice {
+  max-width: 488px;
+  margin: 11px auto;
+  padding: 13px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid #dcebdd;
+  border-radius: 12px;
+  background: #edf4ee;
+  color: #315441;
+  font-size: 11px;
+}
+.gift-demo-notice small { color: #829084; font-size: 9px; }
+
+
+/* MALINA — 26 Xavfsizlik markazi */
+.safety-page {
+  min-height: 100vh;
+  padding: 0 18px 35px;
+  background: #f7f5f0;
+  color: #293b30;
+}
+.safety-header {
+  max-width: 520px;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.safety-header button {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #315441;
+  font-size: 20px;
+}
+.safety-header h2 { font-size: 15px; }
+.safety-header > span { color: #bd9467; font-size: 23px; }
+.safety-hero {
+  max-width: 520px;
+  margin: 16px auto;
+  padding: 25px 15px;
+  border-radius: 20px;
+  background: #eaf1e9;
+  text-align: center;
+}
+.safety-hero > div { font-size: 42px; }
+.safety-hero h1 {
+  margin: 10px 0;
+  color: #1f6b4f;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.safety-hero p { margin: 0; color: #78877b; font-size: 10px; }
+.safety-status {
+  max-width: 488px;
+  margin: 13px auto 20px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dcebdd;
+  border-radius: 14px;
+  background: #fff;
+}
+.safety-status > span {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f2e7;
+  color: #39815b;
+  font-size: 18px;
+}
+.safety-status > div { display: grid; gap: 5px; }
+.safety-status b { font-size: 11px; }
+.safety-status small { color: #92988f; font-size: 9px; }
+.safety-options, .safety-help {
+  max-width: 488px;
+  margin: 0 auto 18px;
+}
+.safety-options h3, .safety-help h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+.safety-option {
+  min-height: 70px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eae7df;
+  background: #fff;
+}
+.safety-option:first-of-type { border-radius: 13px 13px 0 0; }
+.safety-option:last-child { border-radius: 0 0 13px 13px; }
+.safety-option-icon {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #f4efe5;
+  font-size: 17px;
+}
+.safety-option > div { flex: 1; display: grid; gap: 5px; }
+.safety-option b { font-size: 10px; }
+.safety-option small { color: #92988f; font-size: 9px; }
+.safety-option > button {
+  width: 29px;
+  height: 29px;
+  border: 1px solid #dcded6;
+  border-radius: 50%;
+  background: #fff;
+  color: #92988f;
+}
+.safety-option > button.enabled {
+  border-color: #1f6b4f;
+  background: #1f6b4f;
+  color: #fff;
+}
+.safety-help > button {
+  width: 100%;
+  min-height: 65px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 0;
+  border-bottom: 1px solid #eeeae2;
+  background: #fff;
+  color: #34483b;
+  text-align: left;
+}
+.safety-help > button:first-of-type { border-radius: 13px 13px 0 0; }
+.safety-help > button:last-child { border-radius: 0 0 13px 13px; }
+.safety-help > button > span:first-child { font-size: 19px; }
+.safety-help > button > div { flex: 1; display: grid; gap: 5px; }
+.safety-help b { font-size: 10px; }
+.safety-help small { color: #92988f; font-size: 9px; }
+.safety-help > button > span:last-child { color: #bd9467; font-size: 20px; }
+.safety-footnote {
+  max-width: 488px;
+  margin: 12px auto;
+  color: #92988f;
+  font-size: 9px;
+  line-height: 1.5;
+}

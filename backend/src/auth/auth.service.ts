@@ -104,6 +104,37 @@ export class AuthService {
     }
   }
 
+  async adminTelegramLogin(initData: string) {
+    const secret = process.env.JWT_SECRET;
+    if (!secret || secret === 'malina-dev-secret') {
+      throw new ForbiddenException('Admin xavfsizlik kaliti serverda sozlanmagan');
+    }
+
+    const telegramUser = this.getTelegramUser(initData);
+    const allowedIds = (process.env.ADMIN_TELEGRAM_IDS || '')
+      .split(',')
+      .map((id) => id.trim())
+      .filter(Boolean);
+
+    if (!allowedIds.includes(telegramUser.id)) {
+      throw new ForbiddenException('Bu Telegram akkauntga admin ruxsati berilmagan');
+    }
+
+    const accessToken = await this.jwtService.signAsync(
+      { sub: telegramUser.id, role: 'admin' },
+      { secret, expiresIn: '8h' },
+    );
+
+    return {
+      message: 'Admin tasdiqlandi',
+      accessToken,
+      admin: {
+        telegramId: telegramUser.id,
+        firstName: telegramUser.firstName,
+      },
+    };
+  }
+
   async telegramLogin(initData: string) {
     const telegramUser = this.getTelegramUser(initData);
 

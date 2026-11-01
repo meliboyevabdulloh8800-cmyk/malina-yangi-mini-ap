@@ -8,13 +8,13 @@ export const screens = [
   {
     "id": 2,
     "title": "Ro'yxatdan o'tish",
-    "description": "Telefon orqali akkaunt yaratish",
+    "description": "Telegram akkaunti orqali avtomatik kirish va profil yaratish",
     "area": "user"
   },
   {
     "id": 3,
-    "title": "SMS tasdiqlash",
-    "description": "OTP kod bilan telefonni tasdiqlash",
+    "title": "Telegram tasdiqlash",
+    "description": "Telegram akkauntini tekshirish",
     "area": "user"
   },
   {

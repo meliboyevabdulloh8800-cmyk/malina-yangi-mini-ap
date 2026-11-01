@@ -24,6 +24,11 @@ export class AuthController {
     return this.authService.verifyOtp(body.phone, body.code);
   }
 
+  @Post('admin/telegram')
+  adminTelegramLogin(@Body() body: { initData: string }) {
+    return this.authService.adminTelegramLogin(body.initData);
+  }
+
   @Post('telegram')
   telegramLogin(@Body() body: { initData: string }) {
     return this.authService.telegramLogin(body.initData);
