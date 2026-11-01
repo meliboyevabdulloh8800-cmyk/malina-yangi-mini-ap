@@ -11,6 +11,7 @@ export class TelegramController {
     const webhookSecret = process.env.TELEGRAM_WEBHOOK_SECRET;
 
     if (!botToken || !webhookSecret || secret !== webhookSecret) {
+      console.error('Telegram webhook: secret tekshiruvi muvaffaqiyatsiz');
       return { ok: false };
     }
 
@@ -19,27 +20,34 @@ export class TelegramController {
     const text = message?.text;
 
     if (chatId && text?.startsWith('/start')) {
-      await fetch(
-        'https://api.telegram.org/bot' + botToken + '/sendMessage',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: 'Assalomu alaykum! Malina platformasiga xush kelibsiz! ❤️',
-            reply_markup: {
-              inline_keyboard: [[
-                {
-                  text: 'Malinani ochish',
-                  web_app: {
-                    url: process.env.FRONTEND_URL || 'https://malina-yangi-mini-ap.vercel.app/',
-                  },
-                },
-              ]],
-            },
-          }),
-        },
-      );
+      const apiUrl =
+        'https:' + '/' + '/' + 'api.telegram.org/bot' +
+        botToken + '/sendMessage';
+
+      const frontendUrl =
+        process.env.FRONTEND_URL ||
+        'https:' + '/' + '/' + 'malina-yangi-mini-ap.vercel.app/';
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: 'Assalomu alaykum! Malina platformasiga xush kelibsiz! ❤️',
+          reply_markup: {
+            inline_keyboard: [[
+              {
+                text: 'Malinani ochish',
+                web_app: { url: frontendUrl },
+              },
+            ]],
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Telegram sendMessage xatosi:', await response.text());
+      }
     }
 
     return { ok: true };
