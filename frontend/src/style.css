@@ -2581,3 +2581,26 @@
   font-size: 9px;
   line-height: 1.5;
 }
+
+/* Welcome screen — admin access */
+.welcome-admin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 11px 18px;
+  border: 1px solid rgba(213, 166, 109, 0.55);
+  border-radius: 999px;
+  color: #1F6B4F;
+  background: rgba(213, 166, 109, 0.10);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.welcome-admin-link:hover {
+  background: rgba(213, 166, 109, 0.20);
+  transform: translateY(-1px);
+}

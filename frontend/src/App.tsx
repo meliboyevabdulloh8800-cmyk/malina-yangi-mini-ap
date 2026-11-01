@@ -2068,6 +2068,33 @@ function Registration() {
 }
 
 function Welcome() {
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    async function checkAdmin() {
+      const initData = window.Telegram?.WebApp?.initData || '';
+      if (!initData) return;
+
+      try {
+        const api = import.meta.env.VITE_API_URL || 'https://malina-yangi-mini-ap-vwq5.vercel.app/api';
+        const response = await fetch(`${api}/auth/admin/telegram`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ initData }),
+        });
+
+        if (response.ok && active) setIsAdmin(true);
+      } catch {
+        if (active) setIsAdmin(false);
+      }
+    }
+
+    checkAdmin();
+    return () => { active = false; };
+  }, []);
+
   return (
     <div className="welcome-page">
       <div className="welcome-brand">
@@ -2112,6 +2139,11 @@ function Welcome() {
             Boshlash <ArrowRight size={19} />
           </Link>
           <small className="welcome-note">18+ · Hurmat · Samimiyat · Xavfsizlik</small>
+          {isAdmin && (
+            <a className="welcome-admin-link" href="/admin.html">
+              <ShieldCheck size={17} /> Admin paneli <ArrowRight size={16} />
+            </a>
+          )}
         </div>
       </div>
 
