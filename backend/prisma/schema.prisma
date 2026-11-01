@@ -1,0 +1,163 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserStatus {
+  ACTIVE
+  PENDING
+  BLOCKED
+  DELETED
+}
+
+enum Gender {
+  WOMAN
+  MAN
+  OTHER
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+enum ReportStatus {
+  OPEN
+  REVIEWING
+  RESOLVED
+  REJECTED
+}
+
+model User {
+  id             String   @id @default(cuid())
+  telegramId     String?  @unique
+  phone          String?  @unique
+  firstName      String
+  lastName       String?
+  birthDate      DateTime?
+  gender         Gender?
+  bio            String?  @db.VarChar(500)
+  city           String?
+  country        String?
+  interests      String[] @default([])
+  photos         Photo[]
+  status         UserStatus @default(PENDING)
+  isVerified     Boolean @default(false)
+  isPremium      Boolean @default(false)
+  coins          Int @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  sentLikes      Like[] @relation("LikeSender")
+  receivedLikes  Like[] @relation("LikeReceiver")
+  sentMessages   Message[]
+  subscriptions  Subscription[]
+  payments       Payment[]
+  reportsMade    Report[] @relation("ReportAuthor")
+  reportsAgainst Report[] @relation("ReportedUser")
+}
+
+model Photo {
+  id        String   @id @default(cuid())
+  url       String
+  position  Int      @default(0)
+  approved  Boolean  @default(false)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Like {
+  id          String   @id @default(cuid())
+  fromUserId  String
+  toUserId    String
+  isSuperLike Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  fromUser    User     @relation("LikeSender", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser      User     @relation("LikeReceiver", fields: [toUserId], references: [id], onDelete: Cascade)
+
+  @@unique([fromUserId, toUserId])
+}
+
+model Match {
+  id        String   @id @default(cuid())
+  userAId   String
+  userBId   String
+  createdAt DateTime @default(now())
+
+  @@unique([userAId, userBId])
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  messages  Message[]
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  senderId       String
+  body           String       @db.VarChar(4000)
+  readAt         DateTime?
+  createdAt      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User         @relation(fields: [senderId], references: [id], onDelete: Cascade)
+}
+
+model Subscription {
+  id       String             @id @default(cuid())
+  userId   String
+  plan     String
+  status   SubscriptionStatus @default(ACTIVE)
+  startsAt DateTime           @default(now())
+  endsAt   DateTime
+  user     User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id         String        @id @default(cuid())
+  userId     String
+  amount     Decimal       @db.Decimal(12, 2)
+  currency   String        @default("UZS")
+  provider   String
+  status     PaymentStatus @default(PENDING)
+  externalId String?
+  createdAt  DateTime      @default(now())
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Report {
+  id             String       @id @default(cuid())
+  authorId       String
+  reportedUserId String
+  reason         String
+  details        String?
+  status         ReportStatus @default(OPEN)
+  createdAt      DateTime     @default(now())
+  author         User         @relation("ReportAuthor", fields: [authorId], references: [id])
+  reportedUser   User         @relation("ReportedUser", fields: [reportedUserId], references: [id])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  action    String
+  entity    String
+  entityId  String?
+  ipAddress String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
